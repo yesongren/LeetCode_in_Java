@@ -28,7 +28,6 @@ public class TwoSum2_InputArrayIsSorted {
      * @return
      */
     public int[] twoSum(int[] numbers, int target) {
-        if (numbers == null || numbers.length < 2) return new int[]{-1, -1};
         int i = 0;
         int j = numbers.length - 1;
         while (i < j) {                                 // 一定要在 i < j 的情况下，这点容易遗忘
