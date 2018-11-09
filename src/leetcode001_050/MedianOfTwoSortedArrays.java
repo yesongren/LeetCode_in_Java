@@ -42,9 +42,9 @@ public class MedianOfTwoSortedArrays {
             cut1 = (cutR - cutL) / 2 + cutL;
             cut2 = (len / 2) - cut1;
             double L1 = (cut1 == 0) ? Integer.MIN_VALUE : nums1[cut1 - 1];
-            double L2 = (cut2 == 0) ? Integer.MIN_VALUE : nums2[cut1 - 1];
+            double L2 = (cut2 == 0) ? Integer.MIN_VALUE : nums2[cut2 - 1];
             double R1 = (cut1 == nums1.length) ? Integer.MAX_VALUE : nums1[cut1];
-            double R2 = (cut2 == nums2.length) ? Integer.MAX_VALUE : nums1[cut1];
+            double R2 = (cut2 == nums2.length) ? Integer.MAX_VALUE : nums2[cut2];
             if (L1 > R2) {
                 cutR = cut1 - 1;
             } else if (L2 > R1) {
