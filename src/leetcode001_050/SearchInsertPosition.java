@@ -1,12 +1,15 @@
 package leetcode001_050;
 
+/**
+ * Created by yesongren on 2018/11/20
+ */
 public class SearchInsertPosition {
     /**
      * #035 Search Insert Position
      *
      * Description:
-     *
-     * Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+     * Given a sorted array and a target value, return the index if the target is found.
+     * If not, return the index where it would be if it were inserted in order.
      *
      * You may assume no duplicates in the array.
      *
@@ -29,7 +32,7 @@ public class SearchInsertPosition {
 
     public int searchInsert(int[] nums, int target) {
         /**
-         * Weixin's method 1
+         * Wx's method 1
          */
         int start = 0;
         int end = nums.length;
@@ -47,7 +50,7 @@ public class SearchInsertPosition {
 
     public int searchInsert1(int[] nums, int target) {
         /**
-         * Weixin's method 2
+         * Wx's method 2
          */
         int start = 0;
         int end = nums.length - 1;
@@ -68,7 +71,7 @@ public class SearchInsertPosition {
 
     public int searchInsert2(int[] nums, int target) {
         /**
-         * my method
+         * my method 1
          */
         int start = 0;
         int end = nums.length - 1;
@@ -88,6 +91,9 @@ public class SearchInsertPosition {
     }
 
     public int searchInsert3(int[] nums, int target) {
+        /**
+         * my method 2
+         */
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {     // 不加等号答案就是3
