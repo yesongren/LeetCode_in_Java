@@ -1,5 +1,8 @@
 package leetcode001_050;
 
+/**
+ * Created by yesongren on 2018/11/19
+ */
 class ListNode{
     int val;
     ListNode next;
@@ -36,13 +39,5 @@ public class AddTwoNumbers {
             result = result.next;
         }
         return newHead.next;
-    }
-
-    public static void main(String[] args) {
-        AddTwoNumbers aa = new AddTwoNumbers();
-        ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(2);
-        ListNode l3 = aa.addTwoNumbers(l1, l2);
-        System.out.println(l3);
     }
 }
