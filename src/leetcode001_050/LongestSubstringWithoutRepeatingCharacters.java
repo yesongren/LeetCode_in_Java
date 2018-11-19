@@ -8,11 +8,10 @@ public class LongestSubstringWithoutRepeatingCharacters {
     /**
      * #003 Longest Substring Without Repeating Characters
      *
-     *  Description: Given a string, find the length of the longest substring without repeating characters.
+     * Description: Given a string, find the length of the longest substring without repeating characters.
      *
      *
-     *  Example 1:
-     *
+     * Example 1:
      * Input: "abcabcbb"
      * Output: 3
      * Explanation: The answer is "abc", with the length of 3.
@@ -20,19 +19,16 @@ public class LongestSubstringWithoutRepeatingCharacters {
      *
      *
      * Example 2:
-     *
      * Input: "bbbbb"
      * Output: 1
      * Explanation: The answer is "b", with the length of 1.
      *
      *
-     *
      * Example 3:
-     *
      * Input: "pwwkew"
      * Output: 3
      * Explanation: The answer is "wke", with the length of 3.
-     *              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+     * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
      */
 
     public int lengthOfLongestSubstring(String s) {
@@ -66,17 +62,5 @@ public class LongestSubstringWithoutRepeatingCharacters {
             }
         }
         return res;
-    }
-
-    public static void main(String[] args) {
-        //String str = "aab";   //2
-        //String str1 = "abcabcaa";  //3
-        //String str2 = "pwwkwea";  //4
-        String str3 = "aabaa";  //2
-        LongestSubstringWithoutRepeatingCharacters obj = new LongestSubstringWithoutRepeatingCharacters();
-        //System.out.println(obj.lengthOfLongestSubstring2(str));
-        //System.out.println(obj.lengthOfLongestSubstring2(str1));
-        //System.out.println(obj.lengthOfLongestSubstring2(str2));
-        System.out.println(obj.lengthOfLongestSubstring2(str3));
     }
 }
