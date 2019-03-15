@@ -3,6 +3,7 @@ package leetcode001_050;
 /**
  * Created by yesongren on 2019/3/15
  */
+
 public class RemoveDuplicatesfromSortedArray {
     public static int removeDuplicates(int[] nums) {
         if (nums.length == 0) {
