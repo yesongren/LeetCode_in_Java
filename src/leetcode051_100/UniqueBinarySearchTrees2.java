@@ -44,7 +44,7 @@ public class UniqueBinarySearchTrees2 {
         return list;
     }
 
-    /************* Solution 2 *************/
+    /************* simplify sol 1 *************/
 
     public List<TreeNode> generateTrees2(int n) {
         return genTreeList(1, n);
