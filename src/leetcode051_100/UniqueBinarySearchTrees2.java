@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Created by yesongren on 2019/10/8
+ * LeetCode #095- Unique Binary Search Trees II
  */
 public class UniqueBinarySearchTrees2 {
     public List<TreeNode> generateTrees(int n) {
@@ -68,10 +69,5 @@ public class UniqueBinarySearchTrees2 {
             }
         }
         return list;
-    }
-
-    public static void main(String[] args) {
-        UniqueBinarySearchTrees2 obj = new UniqueBinarySearchTrees2();
-        obj.generateTrees(5);
     }
 }
