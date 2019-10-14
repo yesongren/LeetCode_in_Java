@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * Created by yesongren on 2019/10/14
- * LeetCode #169
+ * LeetCode #169: Majority Element
  */
 public class MajorityElement {
     public int majorityElement(int[] nums) {
