@@ -10,6 +10,7 @@ import java.util.List;
 public class UniqueBinarySearchTrees2 {
     public List<TreeNode> generateTrees(int n) {
 
+        if(n == 0) return new ArrayList<>();
         return genTrees(1, n);
     }
 
@@ -48,6 +49,8 @@ public class UniqueBinarySearchTrees2 {
     /************* simplify sol 1 *************/
 
     public List<TreeNode> generateTrees2(int n) {
+
+        if(n == 0) return new ArrayList<>();
         return genTreeList(1, n);
     }
 
