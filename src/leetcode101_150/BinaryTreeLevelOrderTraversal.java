@@ -19,7 +19,7 @@ public class BinaryTreeLevelOrderTraversal {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            int levelNum = queue.size();
+            int levelNum = queue.size();  //不可以在循环中声明,因为queue会随着循环内变化
             List<Integer> level = new ArrayList<>();
 
             for (int i = 0; i < levelNum; i++) {
@@ -31,5 +31,17 @@ public class BinaryTreeLevelOrderTraversal {
             res.add(level);
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        BinaryTreeLevelOrderTraversal obj = new BinaryTreeLevelOrderTraversal();
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        List<List<Integer>> res =  obj.levelOrder(root);
+        System.out.println(res);
     }
 }
