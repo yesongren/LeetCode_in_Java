@@ -34,6 +34,7 @@ public class FibonacciNumber {
 
     // 继续优化空间复杂度成 O(1)
     public int fibOpt(int N) {
+        if (N == 0) return 0;
         if (N == 1 || N == 2) return 1;
         int prev_1 = 1, prev_2 = 1;
         for (int i = 3; i <= N; i++) {
