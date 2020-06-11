@@ -5,7 +5,9 @@ package leetcode601_650;
  * 647. Palindromic Substrings
  */
 public class PalindromicSubstrings {
-    public int countSubstrings(String s) {
+
+    // Time: O(n^2), Space: O(n^2)
+    public int countSubstringsDP(String s) {
         if (s == null || s.length() == 0) return 0;
         int n = s.length();
         int cnt = 0;
@@ -23,9 +25,23 @@ public class PalindromicSubstrings {
         return cnt;
     }
 
-    public static void main(String[] args) {
-        String s = "abbc";
-        PalindromicSubstrings obj = new PalindromicSubstrings();
-        System.out.println(obj.countSubstrings(s));
+    // Time: O(n^2), Space: O(1)
+    public int countPalindromicSubstringsExpand(String s) {
+        if (s == null || s.length() < 1) return 0;
+        int cnt = 0;
+        for (int i = 0; i < s.length(); i++) {
+            cnt += expandAndCount(s, i, i);
+            cnt += expandAndCount(s, i, i + 1);
+        }
+        return cnt;
+    }
+    public int expandAndCount(String s, int left, int right) {
+        int cnt = 0;
+        while (left >= 0 && right <= s.length() && s.charAt(left) == s.charAt(right)) {
+            cnt++;
+            left--;
+            right++;
+        }
+        return cnt;
     }
 }
