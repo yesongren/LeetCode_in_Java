@@ -1,21 +1,15 @@
 package leetcode051_100;
 
+import util.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 /**
  * Created by yesongren on 2019/10/7
+ * 94. Binary Tree Inorder Traversal
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
 
 public class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
