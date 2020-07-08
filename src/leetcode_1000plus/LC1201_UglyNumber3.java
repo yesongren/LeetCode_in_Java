@@ -5,7 +5,7 @@ package leetcode_1000plus;
  * 1201. Ugly Number III
  * 容斥原理， 二分查找
  */
-public class LC1201 {
+public class LC1201_UglyNumber3 {
 
     public long gcd(long a, long b) {
         if (b == 0) return a;
