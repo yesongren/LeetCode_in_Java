@@ -1,6 +1,9 @@
 package leetcode051_100;
 
+import util.TreeNode;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,59 +12,50 @@ import java.util.List;
  */
 public class UniqueBinarySearchTrees2 {
     public List<TreeNode> generateTrees(int n) {
-
-        if(n == 0) return new ArrayList<>();
+        if (n < 1) return Collections.emptyList();
         return genTrees(1, n);
     }
 
-    public List<TreeNode> genTrees(int start, int end) {
+    private TreeNode cloneTrees(TreeNode root) {
+        if (root == null) return null;
+        TreeNode newRoot = new TreeNode(root.val);
+        newRoot.left = root.left;
+        newRoot.right = root.right;
+        return newRoot;
+    }
 
-        List<TreeNode> list = new ArrayList<TreeNode>();
-
-        if (start > end) {
-            list.add(null);
-            return list;
-        }
-
-        if (start == end) {
-            list.add(new TreeNode(start));
-            return list;
-        }
-
-        List<TreeNode> left, right;
-        for (int i = start; i <= end; i++) {
-
-            left = genTrees(start, i - 1);
-            right = genTrees(i + 1, end);
-
-            for (TreeNode lnode : left) {
-                for (TreeNode rnode : right) {
+    private List<TreeNode> genTrees(int low, int high) {
+        if (low > high) return new ArrayList<>();
+        List<TreeNode> res = new ArrayList<>();
+        for (int i = low; i <= high; i++) {
+            List<TreeNode> lefts = genTrees(low, i - 1);
+            List<TreeNode> rights = genTrees(i + 1, high);
+            for (TreeNode left : lefts) {
+                for (TreeNode right : rights) {
                     TreeNode root = new TreeNode(i);
-                    root.left = lnode;
-                    root.right = rnode;
-                    list.add(root);
+                    root.left = cloneTrees(left);
+                    root.right = cloneTrees(right);
+                    res.add(root);
                 }
             }
         }
-        return list;
+        return res;
     }
 
-    /************* simplify sol 1 *************/
+    /************* simplify *************/
 
     public List<TreeNode> generateTrees2(int n) {
-
-        if(n == 0) return new ArrayList<>();
+        if (n == 0) return new ArrayList<>();
         return genTreeList(1, n);
     }
 
-    private List<TreeNode> genTreeList(int start, int end) {
+    private List<TreeNode> genTreeList(int low, int high) {
         List<TreeNode> list = new ArrayList<>();
-        if (start > end) {
-            list.add(null);
-        }
-        for (int idx = start; idx <= end; idx++) {
-            List<TreeNode> leftList = genTreeList(start, idx - 1);
-            List<TreeNode> rightList = genTreeList(idx + 1, end);
+        if (low > high) list.add(null);
+
+        for (int idx = low; idx <= high; idx++) {
+            List<TreeNode> leftList = genTreeList(low, idx - 1);
+            List<TreeNode> rightList = genTreeList(idx + 1, high);
             for (TreeNode left : leftList) {
                 for (TreeNode right : rightList) {
                     TreeNode root = new TreeNode(idx);
